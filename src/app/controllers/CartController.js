@@ -55,5 +55,15 @@ module.exports = {
 
         // redirecionamento para a pagina cart
         return res.redirect('/cart')
+    },
+    delete(req, res) {
+        let { id } = req.params
+        let { cart } = req.session
+
+        if(!cart) return
+
+        req.session.cart = Cart.init(cart).delete(id)
+
+        return res.redirect('/cart')
     }
 }
