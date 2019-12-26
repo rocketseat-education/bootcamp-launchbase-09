@@ -35,5 +35,25 @@ module.exports = {
         // redirecionar o usuário para a tela do carrinho.
         return res.redirect('/cart')
 
+    },
+    removeOne(req,res) {
+        // pegar o id do produto
+        let { id } = req.params
+
+        // pegar o carrinho da sessão
+        let { cart } = req.session
+        
+
+        // se não tiver carrinho, retornar
+        if (!cart) return res.redirect('/cart')
+
+        // iniciar o carrinho (gerenciador de carrinho) e remover
+        cart = Cart.init(cart).removeOne(id)
+
+        // atualizar o carrinho da sessão, removendo 1 item
+        req.session.cart = cart
+
+        // redirecionamento para a pagina cart
+        return res.redirect('/cart')
     }
 }
