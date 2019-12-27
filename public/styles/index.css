@@ -126,25 +126,27 @@ header div.container a {
 }
 
 /* PRIMARY MENU */
-nav.primary ul {
+nav.primary > ul {
     display:flex;
     justify-content: space-between;
 }
 
-nav.primary ul li a{
+nav.primary > ul > li > a {
     display:flex;
     align-items: center;
+
+    height: 48px;
 
     color: white;
 
     transition: 200ms;
 }
 
-nav.primary ul li a:hover{
+nav.primary > ul > li > a:hover{
     color: var(--primary-color)
 }
 
-nav.primary ul li a i{
+nav.primary > ul > li > a > i{
     margin-right: 8px;
 }
 

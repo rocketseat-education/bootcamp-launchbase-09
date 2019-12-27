@@ -32,6 +32,7 @@ ul.dropdown {
     
     transition: all 200ms;
 
+    z-index: 1;
 
 }
 
