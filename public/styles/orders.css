@@ -24,3 +24,86 @@
     height: 50px;
     margin: 80px 0 56px
 }
+
+/* my orders*/
+
+.orders .item-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto 100px;
+    grid-gap: 32px;
+
+    align-items: center;
+
+    padding: 16px 0;
+
+    color: #444;
+
+}
+.orders .item-container:hover {
+    background-color: #eee;
+}
+
+.orders .item {
+    display: flex;
+}
+
+.orders img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+    
+    border-radius: 8px;
+    border: 1px solid #fefefe;
+    box-shadow: 2px 2px 4px -4px black;
+
+    margin: 0 16px
+}
+
+.orders .item div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.item .title,
+.item .price,
+.item .updated-at {
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.item .price,
+.orders .total {
+    font-weight: bold;
+}
+
+.item .updated-at {
+    margin-top: auto;
+    margin-bottom: 0;
+
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.orders .status {
+    justify-self: center;
+
+    color: white;
+    border-radius: 16px;
+    padding: 4px 12px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.orders .status.open {
+    background-color: rgb(0, 195, 255)
+}
+
+.orders .status.sold {
+    background-color: rgba(54, 185, 2, 0.548)
+}
+
+.orders .status.canceled {
+    background-color: rgb(255, 81, 0)
+}
