@@ -135,3 +135,31 @@ CREATE TRIGGER set_timestamp
 BEFORE UPDATE ON orders
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_set_timestamp();
+
+-- implement soft delete on products
+-- 1. Add column deleted_at as timestamp
+ALTER TABLE products ADD COLUMN "deleted_at" timestamp;
+
+-- 2. create a RULE that will run every time you try to delete some product
+-- https://coderwall.com/p/vezbtq/soft-delete-in-postgresql-using-rules
+CREATE OR REPLACE RULE delete_product AS
+ON DELETE TO products DO INSTEAD
+UPDATE products
+SET deleted_at = now()
+WHERE products.id = old.id;
+
+-- 3. Create a view where you can get only active records
+-- love this way: http://shuber.io/porting-activerecord-soft-delete-behavior-to-postgres/
+CREATE VIEW products_without_deleted AS  
+SELECT * FROM products WHERE deleted_at IS NULL;
+
+-- show what view is. Is like a table, but instead, it is not a phisical table, 
+-- but it is that query inside the view
+-- NICE TO NOTICE: in a VIEW we can INSERT, UPDATE, and DELETE as well
+SELECT * FROM products_without_deleted;
+
+-- 4. Rename Table and Views
+-- Most of the time we want to work with active users, not ALL users including the deleted ones. 
+-- For convenience, let's rename our table and view.
+ALTER TABLE products RENAME TO products_with_deleted;  
+ALTER VIEW products_without_deleted RENAME TO products;
