@@ -1,2 +1,5 @@
 node_modules/
-public/images
+public/images/*
+
+# not ignoring this file
+!public/images/placeholder.png
