@@ -1,5 +1,12 @@
 <h1 align="center">Launchstore</h1>
 <p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
+<p align="center">
 <img src="https://i.imgur.com/y6SEcAN.png" alt="Launchstore Sample Image">
 </p>
 <p>
@@ -9,11 +16,11 @@
   </a>
 </p>
 
-> Ecommerce style done in Launchbase bootcamp
+## 🚀 Tecnologias
 
-## ☕️ Techs
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-To work in frontend, we used: 
+Frontend: 
 - HTML
 - CSS
 - JavaScript
@@ -21,7 +28,7 @@ To work in frontend, we used:
 - Browser Sync to help us develop faster using hot reload and auto refresh
 - Lottie for animations
 
-To work in backend, we used: 
+Backend: 
 - Node
 - Express to help us with server/routes
 - Nodemon to help us develop faster with auto reload server
@@ -32,98 +39,91 @@ To work in backend, we used:
 - Faker
 - Postgres as database
 
-## 🏃🏽‍♂️ Install
+## 💻 Projeto
 
-Clone this project into your machine.
+Launchstore é um marketplace/e-commerce para compra e venda de produtos ou serviços.
 
-You will need `3 steps` 
-1. Install dependencies
-2. Install database 
-3. Seed database
+## 🏃🏽‍♂️ Instalação
 
-Let's do it!
+Faça o clone desse projeto na sua máquina.
+
+Vamos dividir em `3 passos` simples.
+
+1. Instalar dependencias
+2. Instalar banco de dados
+3. Alimentar o banco de dados
+
+Vamos lá!
 
 ---
 
-### 🗂 #1 Installing dependencies
+### 🗂 1 Instalar dependencias
 
-1. In your root project folder, run code below
+1. Rode o código abaixo, no diretório principal do seu projeto.
 
 ```sh
 npm install
 ```
 
-*make sure your internet is good, maybe it's take a while*
+*Verifique se sua internet está estável, pois isso poderá levar um tempo*
 
 ---
 
-### 🗄 #2 Installing DATABASE
+### 🗄 2 Instalar banco de dados
 
-1. Install Postgres in your machine
-2. Navigate to project root directory
-3. Run code bellow to create database
+1. Instale o Postgres na sua máquina
+2. Rode o código abaixo no diretório principal do seu projeto.
 
 ```sh
 npm run createdatabase
 ```
 
-4. You will be prompted one time about `Postgres user` and twice about `Password for user postgres: `.
+3. Irá aparecer a seguinte mensagem `Postgres user`. Digite o nome de usuário do seu Postgres
+4. Duas vezes irá aparecer `Password for user postgres: `. Digite a senha do seu banco de dados e aperte enter.
 
 **IMPORTANT**
-- you will need psql in your enviroment PATH
+- você vai precisar ter a variável `psql` nas variáveis de ambiente da sua máquina.
 
 <img src="https://i.imgur.com/HB90eEm.png">
 
-If everything runs ok, go to next step
+Se tudo deu certo, então, vá para o próximo passo.
 
 ---
 
-### 🌱 #3 Seeding database
+### 🌱 3 Alimentar o banco de dados
 
-Let's put some fake data into database
+Vamos inserir alguns dados falsos para seu Launchstore.
 
-1. Check if your `src/config/db.js` file matches your Postgres credentials
-2. In your root Project folder, run code bellow
+1. Primeiro, verifique se seu arquivo `src/config/db.js` está com as credenciais corretas do seu Postgres.
+2. Rode o código abaixo na diretório principal do seu projeto.
 
 ```sh
 node seed.js
 ```
 
-After while, about 10s, your database will be seeded. 
+Após uns 10 segundos, seu banco de dados estará pronto.
 
-You can check it in your desired Postgres app.
+Você poderá verificar seus dados no aplicativo do Postgres de sua preferência. Eu estou usando o Postbird
 
 <img src="https://i.imgur.com/qhVgPeE.png">
 
-**Info** =========================
+**Informação importante** *Todos os usuários fictícios possuem a senha* `1111`
 
-*All users has* `1111` as password
 
-=============================
+## 💻 Como usar
 
-## 💻 Usage
-
+1. Rode o código abaixo no diretório principal do seu projeto.
 ```sh
 npm run start
 ```
 
-Open your browser and go to: 
+Agora, abra seu navegador e navegue até: 
 http://localhost:5000
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT.
 
 ---
 
-## 👨🏽‍🔧 Author
-
-👤 **Mayk Brito**
-
-* Website: gitshowcase.com/maykbrito
-* Twitter: [@maykbrito](https://twitter.com/maykbrito)
-* Github: [@maykbrito](https://github.com/maykbrito)
-* LinkedIn: [@maykbrito](https://linkedin.com/in/maykbrito)
-
-## 💜 Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
